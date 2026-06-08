@@ -83,12 +83,12 @@ if "database_soal" not in st.session_state:
             "id": 9, 
             "pola": "Pola 2: 〜とは限らない (Belum tentu... / Tidak selalu...)",
             "kanji": "新聞に書いてあることがいつも本当のこととは限らない。",
-            "hiragana": "しんぶん に かいて ある こと が いつom ほんとう の こと と は かぎらない 。",
+            "hiragana": "しんぶん に かいて ある こと が いつも ほんとう の こと と は かぎらない 。",
             "arti": "Apa yang tertulis di koran tidak selalu/belum tentu benar.",
             "kunci": ["新聞", "に", "書いて", "ある", "こと", "が", "いつも", "本当", "の", "こと", "だ", "と", "は", "限らない", "。"],
             "soal": ["新聞", "に", "書いて", "ある", "こと", "が", "いつも", "本当", "の", "こと", "だ", "と", "は", "限らない", "。"]
         },
-        # --- Pola 3: 〜わけ翻译 ・ 〜というわけではない ・ 〜のではない ---
+        # --- Pola 3: 〜わけではない ・ 〜というわけではない ・ 〜のではない ---
         {
             "id": 10, 
             "pola": "Pola 3: 〜わけではない (Bukan berarti... / Bukanlah...)",
@@ -96,7 +96,7 @@ if "database_soal" not in st.session_state:
             "hiragana": "ながい あいだ ほん を おかりした まま でした が 、 わすれていた わけ で は ありません 。",
             "arti": "Saya memang meminjam buku ini dalam waktu yang lama, tetapi bukan berarti saya melupakannya.",
             "kunci": ["長い", "間", "本", "を", "お借り", "した", "まま", "でした", "外", "忘れて", "いた", "わけ", "で", "は", "ありません", "。"],
-            "soal": ["長い", "間", "本", "を", "お借り", "した", "まま", "でした", "g", "忘れて", "いた", "わけ", "で", "は", "ありません", "。"]
+            "soal": ["長い", "間", "本", "を", "お借り", "した", "まま", "でした", "が", "忘れて", "いた", "わけ", "で", "は", "ありません", "。"]
         },
         {
             "id": 11, 
@@ -175,10 +175,10 @@ if "database_soal" not in st.session_state:
         {
             "id": 19, 
             "pola": "Pola 5: 〜ことは〜が、… (Memang... sih, tapi...)",
-            "kanji": "わたしは泳げることは泳げますが、長い距離はだめなんです。",
+            "kanji": "わたしは泳げることは泳geますが、長い距離はだめなんです。",
             "hiragana": "わたし は およげる こと は およげます が 、 ながい きょり は だめ な ん です 。",
             "arti": "Saya memang bisa berenang sih, tapi kalau jarak jauh tidak bisa.",
-            "kunci": ["わたし", "は", "泳げる", "こと", "は", "泳げます", "が", "長い", "距離", "は", "だめ", "な", "ん", "です", "。"],
+            "kunci": ["わたし", "は", "泳げる", "こと", "は", "泳げます", "外", "長い", "距離", "は", "だめ", "な", "ん", "です", "。"],
             "soal": ["わたし", "は", "泳げる", "こと", "は", "泳げます", "が", "長い", "距離", "は", "だめ", "な", "ん", "です", "。"]
         },
         {
@@ -196,12 +196,14 @@ if "database_soal" not in st.session_state:
             "kanji": "子どもを育てるのは大変なことは大変だが、成長が楽しみで大変さを忘れる。",
             "hiragana": "こども を そだてる の は たいへんな こと は たいへん だ が 、 せいちょう が たのしみ で たいへんさ を わすれる 。",
             "arti": "Membesarkan anak memang merepotkan/berat sih, tetapi karena menantikan pertumbuhannya, rasa lelah itu pun terlupakan.",
-            "kunci": ["子ども", "を", "育てる", "の", "は", "大変", "な", "こと", "は", "大変", "だ", "が", "成長", "が", "楽しみ", "で", "大変", "さ", "を", "忘れる", "。"],
+            "kunci": ["子ども", "を", "育てる", "の", "は", "大変", "な", "こと", "は", "大変", "だ", "が", "成長", "高", "楽しみ", "で", "大変", "さ", "を", "忘れる", "。"],
             "soal": ["子ども", "を", "育てる", "の", "は", "大変", "な", "こと", "は", "大変", "だ", "が", "成長", "が", "楽しみ", "で", "大変", "さ", "を", "忘れる", "。"]
         }
     ]
  
 # --- INISIALISASI STATE ---
+total_soal = len(st.session_state.database_soal)
+ 
 if "index_soal" not in st.session_state:
     st.session_state.index_soal = 0
 if "jawaban_user" not in st.session_state:
@@ -220,6 +222,14 @@ soal_sekarang = st.session_state.database_soal[st.session_state.index_soal]
  
 if not st.session_state.bank_kata and not st.session_state.jawaban_user:
     st.session_state.bank_kata = [{"id": i, "teks": kata, "dipakai": False} for i, kata in enumerate(soal_sekarang["soal"])]
+ 
+# --- HITUNG NOMOR TARGET NAVIGASI ---
+idx_sebelumnya = (st.session_state.index_soal - 1) % total_soal
+idx_berikutnya = (st.session_state.index_soal + 1) % total_soal
+ 
+# Mengambil ID asli soal dari database (1-indexed)
+no_sebelumnya = st.session_state.database_soal[idx_sebelumnya]["id"]
+no_berikutnya = st.session_state.database_soal[idx_berikutnya]["id"]
  
 # --- STYLING CSS ---
 st.markdown("""
@@ -266,7 +276,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
  
 st.title("🦉 Bunpou Master (BAB 8 - Acak Total)")
-st.caption(f"Soal {soal_sekarang['id']} dari {len(st.session_state.database_soal)}")
+st.caption(f"Soal {soal_sekarang['id']} dari {total_soal}")
 st.markdown("---")
  
 st.markdown(f"""
@@ -352,12 +362,11 @@ render_kuis_lengkap()
  
 st.markdown("<br><hr>", unsafe_allow_html=True)
  
-# --- TOMBOL NAVIGASI UTAMA ---
+# --- TOMBOL NAVIGASI UTAMA DENGAN NOMOR DINAMIS ---
 col1, col2, col3 = st.columns(3)
 with col1:
-    # SEKARANG BERFUNGSI SEBAGAI NAVIGASI MUNDUR (PREVIOUS QUESTION)
-    if st.button("Kembali ⬅️", use_container_width=True):
-        st.session_state.index_soal = (st.session_state.index_soal - 1) % len(st.session_state.database_soal)
+    if st.button(f"⬅️ Soal {no_sebelumnya}", use_container_width=True):
+        st.session_state.index_soal = idx_sebelumnya
         st.session_state.jawaban_user = []
         st.session_state.bank_kata = []
         st.session_state.idx_kata_dipilih = None
@@ -367,8 +376,8 @@ with col2:
     if st.button("PERIKSA ✅", type="primary", use_container_width=True):
         st.session_state.status_periksa = True
 with col3:
-    if st.button("Lanjut ➡️", use_container_width=True):
-        st.session_state.index_soal = (st.session_state.index_soal + 1) % len(st.session_state.database_soal)
+    if st.button(f"Soal {no_berikutnya} ➡️", use_container_width=True):
+        st.session_state.index_soal = idx_berikutnya
         st.session_state.jawaban_user = []
         st.session_state.bank_kata = []
         st.session_state.idx_kata_dipilih = None
