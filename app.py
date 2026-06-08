@@ -83,12 +83,12 @@ if "database_soal" not in st.session_state:
             "id": 9, 
             "pola": "Pola 2: 〜とは限らない (Belum tentu... / Tidak selalu...)",
             "kanji": "新聞に書いてあることがいつも本当のこととは限らない。",
-            "hiragana": "しんぶん に かいて ある こと が いつも ほんとう の こと と は かぎらない 。",
+            "hiragana": "しんぶん に かいて ある こと が いつom ほんとう の こと と は かぎらない 。",
             "arti": "Apa yang tertulis di koran tidak selalu/belum tentu benar.",
             "kunci": ["新聞", "に", "書いて", "ある", "こと", "が", "いつも", "本当", "の", "こと", "だ", "と", "は", "限らない", "。"],
             "soal": ["新聞", "に", "書いて", "ある", "こと", "が", "いつも", "本当", "の", "こと", "だ", "と", "は", "限らない", "。"]
         },
-        # --- Pola 3: 〜わけではない ・ 〜というわけではない ・ 〜のではない ---
+        # --- Pola 3: 〜わけ翻译 ・ 〜というわけではない ・ 〜のではない ---
         {
             "id": 10, 
             "pola": "Pola 3: 〜わけではない (Bukan berarti... / Bukanlah...)",
@@ -96,7 +96,7 @@ if "database_soal" not in st.session_state:
             "hiragana": "ながい あいだ ほん を おかりした まま でした が 、 わすれていた わけ で は ありません 。",
             "arti": "Saya memang meminjam buku ini dalam waktu yang lama, tetapi bukan berarti saya melupakannya.",
             "kunci": ["長い", "間", "本", "を", "お借り", "した", "まま", "でした", "外", "忘れて", "いた", "わけ", "で", "は", "ありません", "。"],
-            "soal": ["長い", "間", "本", "を", "お借り", "した", "まま", "でした", "が", "忘れて", "いた", "わけ", "で", "は", "ありません", "。"]
+            "soal": ["長い", "間", "本", "を", "お借り", "した", "まま", "でした", "g", "忘れて", "いた", "わけ", "で", "は", "ありません", "。"]
         },
         {
             "id": 11, 
@@ -355,16 +355,14 @@ st.markdown("<br><hr>", unsafe_allow_html=True)
 # --- TOMBOL NAVIGASI UTAMA ---
 col1, col2, col3 = st.columns(3)
 with col1:
-    # FITUR KEMBALI (UNDO KATA TERAKHIR)
-    if st.button("Kembali ↩️", use_container_width=True):
-        if st.session_state.jawaban_user:
-            kata_terakhir = st.session_state.jawaban_user.pop()  # Ambil kata paling belakang
-            for kata_bank in st.session_state.bank_kata:
-                if kata_bank["id"] == kata_terakhir["id"]:
-                    kata_bank["dipakai"] = False  # Munculkan lagi di pilihan kata
-            st.session_state.idx_kata_dipilih = None
-            st.session_state.status_periksa = False
-            st.rerun()
+    # SEKARANG BERFUNGSI SEBAGAI NAVIGASI MUNDUR (PREVIOUS QUESTION)
+    if st.button("Kembali ⬅️", use_container_width=True):
+        st.session_state.index_soal = (st.session_state.index_soal - 1) % len(st.session_state.database_soal)
+        st.session_state.jawaban_user = []
+        st.session_state.bank_kata = []
+        st.session_state.idx_kata_dipilih = None
+        st.session_state.status_periksa = False
+        st.rerun()
 with col2:
     if st.button("PERIKSA ✅", type="primary", use_container_width=True):
         st.session_state.status_periksa = True
