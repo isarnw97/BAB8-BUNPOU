@@ -138,7 +138,7 @@ if "database_soal" not in st.session_state:
         {
             "id": 15, 
             "pola": "Pola 4: 〜ないことはない (Bukan tidak... / Bisa saja asalkan...)",
-            "kanji": "ここから駅まで歩けないことはありませんが、かなり時間がかかりますよ。",
+            "kanji": "ここから駅まで歩けないことはありませんg、かなり時間がかかりますよ。",
             "hiragana": "ここ から えき まで あるけない こと は ありません が 、 かなり じかん が かかります よ 。",
             "arti": "Bukan tidak bisa berjalan kaki dari sini sampai stasiun, tetapi memakan waktu yang cukup lama, lho.",
             "kunci": ["ここ", "から", "駅", "まで", "歩けない", "こと", "は", "ありません", "が", "かなり", "時間", "が", "かかります", "よ", "。"],
@@ -218,16 +218,15 @@ if "idx_kata_dipilih" not in st.session_state:
 if "mode_tukar" not in st.session_state:
     st.session_state.mode_tukar = False
  
+# --- AMBIL DATA SOAL SESUAI INDEX SEKARANG ---
 soal_sekarang = st.session_state.database_soal[st.session_state.index_soal]
  
 if not st.session_state.bank_kata and not st.session_state.jawaban_user:
     st.session_state.bank_kata = [{"id": i, "teks": kata, "dipakai": False} for i, kata in enumerate(soal_sekarang["soal"])]
  
-# --- HITUNG NOMOR TARGET NAVIGASI ---
+# --- HITUNG NOMOR TARGET UNTUK TOMBOL BAWAH ---
 idx_sebelumnya = (st.session_state.index_soal - 1) % total_soal
 idx_berikutnya = (st.session_state.index_soal + 1) % total_soal
- 
-# Mengambil ID asli soal dari database (1-indexed)
 no_sebelumnya = st.session_state.database_soal[idx_sebelumnya]["id"]
 no_berikutnya = st.session_state.database_soal[idx_berikutnya]["id"]
  
@@ -271,6 +270,10 @@ st.markdown("""
         font-weight: bold;
         margin-bottom: 10px;
         font-size: 0.9rem;
+    }
+    /* Mempercantik deretan nomor agar rapat dan rapi */
+    div[data-testid="stPills"] {
+        justify-content: center !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -362,7 +365,7 @@ render_kuis_lengkap()
  
 st.markdown("<br><hr>", unsafe_allow_html=True)
  
-# --- TOMBOL NAVIGASI UTAMA DENGAN NOMOR DINAMIS ---
+# --- TOMBOL NAVIGASI UTAMA ---
 col1, col2, col3 = st.columns(3)
 with col1:
     if st.button(f"⬅️ Soal {no_sebelumnya}", use_container_width=True):
@@ -383,6 +386,32 @@ with col3:
         st.session_state.idx_kata_dipilih = None
         st.session_state.status_periksa = False
         st.rerun()
+ 
+# --- FITUR LOMPAT INSTAN DI PALING BAWAH (DENGAN PILLS ANGKA RAPAT) ---
+st.write("") 
+st.markdown("<div style='text-align: center; font-weight: bold; font-size: 0.9rem; color: #555555;'>🎯 Lompat Instan ke Nomor Soal:</div>", unsafe_allow_html=True)
+ 
+# Membuat list nomor ["1", "2", ..., "21"]
+list_nomor = [str(s["id"]) for s in st.session_state.database_soal]
+nomor_sekarang_str = str(soal_sekarang["id"])
+ 
+lompat_nomor = st.pills(
+    label="Pilihan Nomor Soal",
+    options=list_nomor,
+    selection_mode="single",
+    default=nomor_sekarang_str,
+    key="pills_navigasi",
+    label_visibility="collapsed"
+)
+ 
+# Jalankan logika pindah halaman jika user memilih angka yang berbeda
+if lompat_nomor and lompat_nomor != nomor_sekarang_str:
+    st.session_state.index_soal = list_nomor.index(lompat_nomor)
+    st.session_state.jawaban_user = []
+    st.session_state.bank_kata = []
+    st.session_state.idx_kata_dipilih = None
+    st.session_state.status_periksa = False
+    st.rerun()
  
 # VALIDASI JAWABAN
 if st.session_state.status_periksa:
