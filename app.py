@@ -30,7 +30,7 @@ if "database_soal" not in st.session_state:
             "kanji": "国家試験なのだから難しいはずがない。がんばらなくては……。",
             "hiragana": "こっかしけん な の だ から むずかしい はず が ない 。 がんばらなくては …… 。",
             "arti": "Karena ini adalah ujian nasional, tidak mungkin tidak sulit (pasti sulit). Saya harus berjuang...",
-            "kunci": ["国家", "試験", "なのだから", "難しい", "はず", "が", "ない", "。", "がんばらなくては", "……"],
+            "kunci": ["国家", "試験", "なのだから", "難しい", "はず", "が", "ない", "。", "...がんばらなくては", "……"],
             "soal": ["国家", "試験", "だ", "から", "易しい", "はず", "が", "ない", "がんばらなくては", "の", "な", "。", "……"]
         },
         {
@@ -96,7 +96,7 @@ if "database_soal" not in st.session_state:
             "hiragana": "ながい あいだ ほん を おかりした まま でした が 、 わすれていた わけ で は ありません 。",
             "arti": "Saya memang meminjam buku ini dalam waktu yang lama, tetapi bukan berarti saya melupakannya.",
             "kunci": ["長い", "間", "本", "を", "お借り", "した", "まま", "でした", "外", "忘れて", "いた", "わけ", "で", "は", "ありません", "。"],
-            "soal": ["長い", "間", "本", "を", "お借り", "した", "まま", "でした", "が", "忘れて", "いた", "わけ", "で", "は", "ありません", "。"]
+            "soal": ["長い", "間", "本", "を", "お借り", "した", "まま", "でした", "g", "忘れて", "いた", "わけ", "で", "は", "ありません", "。"]
         },
         {
             "id": 11, 
@@ -110,11 +110,11 @@ if "database_soal" not in st.session_state:
         {
             "id": 12, 
             "pola": "Pola 3: 〜わけではない (Bukan berarti... / Bukanlah...)",
-            "kanji": "この仕事が好きというわけではないが、彼といっしょに仕事ができて楽しい。",
+            "kanji": "この仕事が好きというわけではないg、彼といっしょに仕事ができて楽しい。",
             "hiragana": "この しごと が すき という わけ で は ない が 、 かれ と いっしょ に しごと が できて たのしい 。",
             "arti": "Bukan berarti saya menyukai pekerjaan ini, tetapi saya senang karena bisa bekerja bersama dia.",
             "kunci": ["この", "仕事", "が", "好き", "だ", "という", "わけ", "で", "は", "ない", "が", "彼", "と", "一緒", "に", "仕事", "が", "できて", "楽しい", "。"],
-            "soal": ["この", "仕事", "が", "好き", "だ", "という", "わけ", "で", "は", "ない", "が", "彼", "と", "一緒", "に", "仕事", "が", "できて", "楽しい", "。"]
+            "soal": ["この", "仕事", "が", "好き", "だ", "という", "わけ", "で", "は", "ない", "が", "彼", "と", "一緒", "に", "仕事", "g", "できて", "楽しい", "。"]
         },
         {
             "id": 13, 
@@ -138,10 +138,10 @@ if "database_soal" not in st.session_state:
         {
             "id": 15, 
             "pola": "Pola 4: 〜ないことはない (Bukan tidak... / Bisa saja asalkan...)",
-            "kanji": "ここから駅まで歩けないことはありませんg、かなり時間がかかりますよ。",
+            "kanji": "ここから駅まで歩けないことはありませんが、かなり時間がかかりますよ。",
             "hiragana": "ここ から えき まで あるけない こと は ありません が 、 かなり じかん が かかります よ 。",
             "arti": "Bukan tidak bisa berjalan kaki dari sini sampai stasiun, tetapi memakan waktu yang cukup lama, lho.",
-            "kunci": ["ここ", "から", "駅", "まで", "歩けない", "こと", "は", "ありません", "が", "かなり", "時間", "が", "かかります", "よ", "。"],
+            "kunci": ["ここ", "から", "駅", "まで", "歩けない", "こと", "は", "ありません", "が", "かなり", "時間", "g", "かかります", "よ", "。"],
             "soal": ["ここ", "から", "駅", "まで", "歩けない", "こと", "は", "ありません", "が", "かなり", "時間", "が", "かかります", "よ", "。"]
         },
         {
@@ -156,18 +156,18 @@ if "database_soal" not in st.session_state:
         {
             "id": 17, 
             "pola": "Pola 4: 〜ないことはない (Bukan tidak... / Bisa saja asalkan...)",
-            "kanji": "試験の結果が心配でないことはないのですが、今は終わってほっとしています。",
+            "kanji": "試験の結果g心配でないことはないのですが、今は終わってほっとしています。",
             "hiragana": "しけん の けっか が しんぱい で ない こと は ない の です が 、 いま は おわって ほっとして います 。",
             "arti": "Bukan berarti saya tidak khawatir dengan hasil ujiannya, tetapi sekarang saya merasa lega karena sudah selesai.",
             "kunci": ["試験", "の", "結果", "が", "心配", "で", "ない", "こと", "は", "ない", "の", "です", "が", "今", "は", "終わって", "ほっと", "して", "います", "。"],
             "soal": ["試験", "の", "結果", "が", "心配", "で", "ない", "こと", "は", "ない", "の", "です", "が", "今", "は", "終わって", "ほっと", "して", "います", "。"]
         },
-        # --- Pola 5: 〜ことは〜が、… ---
+        # --- Pola 5: 〜ことは〜g、… ---
         {
             "id": 18, 
             "pola": "Pola 5: 〜ことは〜が、… (Memang... sih, tapi...)",
             "kanji": "彼からの手紙は読んだことは読んだんですが、意味がよくわかりませんでした。",
-            "hiragana": "かれ から の てがみ は よんだ こと は よんだ ん です が 、 いみが よく わかりません でした 。",
+            "hiragana": "かれ から の てgみ は よんだ こと は よんだ ん です が 、 いみが よく わかりません でした 。",
             "arti": "Surat dari dia memang sudah saya baca sih, tapi saya tidak begitu mengerti artinya.",
             "kunci": ["彼", "から", "の", "手紙", "は", "読んだ", "こと", "は", "読んだ", "ん", "です", "が", "意味", "が", "よく", "わかりませんでした", "。"],
             "soal": ["彼", "から", "の", "手紙", "は", "読んだ", "こと", "は", "読んだ", "ん", "です", "が", "意味", "が", "よく", "わかりませんでした", "。"]
@@ -175,7 +175,7 @@ if "database_soal" not in st.session_state:
         {
             "id": 19, 
             "pola": "Pola 5: 〜ことは〜が、… (Memang... sih, tapi...)",
-            "kanji": "わたしは泳げることは泳geますが、長い距離はだめなんです。",
+            "kanji": "わたしは泳げることは泳げますが、長い距離はだめなんです。",
             "hiragana": "わたし は およげる こと は およげます が 、 ながい きょり は だめ な ん です 。",
             "arti": "Saya memang bisa berenang sih, tapi kalau jarak jauh tidak bisa.",
             "kunci": ["わたし", "は", "泳げる", "こと", "は", "泳げます", "外", "長い", "距離", "は", "だめ", "な", "ん", "です", "。"],
@@ -188,13 +188,13 @@ if "database_soal" not in st.session_state:
             "hiragana": "この ほん は たかい こと は たかい が 、 しゃしん が おおくて たのしめ そう だ 。",
             "arti": "Buku ini memang mahal sih, tapi sepertinya menyenangkan karena banyak fotonya.",
             "kunci": ["この", "本", "は", "高い", "こと", "は", "高い", "が", "写真", "が", "多くて", "楽しめ", "そう", "だ", "。"],
-            "soal": ["この", "本", "は", "高い", "こと", "は", "高い", "が", "写真", "が", "多くて", "楽しめ", "そう", "だ", "。"]
+            "soal": ["この", "本", "は", "高い", "こと", "は", "高い", "が", "写真", "g", "多くて", "楽しめ", "そう", "だ", "。"]
         },
         {
             "id": 21, 
             "pola": "Pola 5: 〜ことは〜が、… (Memang... sih, tapi...)",
             "kanji": "子どもを育てるのは大変なことは大変だが、成長が楽しみで大変さを忘れる。",
-            "hiragana": "こども を そだてる の は たいへんな こと は たいへん だ が 、 せいちょう が たのしみ で たいへんさ を わすれる 。",
+            "hiragana": "こども を そだてる の は たいへんな こと は たいへん だ が 、 せいちょう が たのしみ で たいへんs を わすれる 。",
             "arti": "Membesarkan anak memang merepotkan/berat sih, tetapi karena menantikan pertumbuhannya, rasa lelah itu pun terlupakan.",
             "kunci": ["子ども", "を", "育てる", "の", "は", "大変", "な", "こと", "は", "大変", "だ", "が", "成長", "高", "楽しみ", "で", "大変", "さ", "を", "忘れる", "。"],
             "soal": ["子ども", "を", "育てる", "の", "は", "大変", "な", "こと", "は", "大変", "だ", "が", "成長", "が", "楽しみ", "で", "大変", "さ", "を", "忘れる", "。"]
@@ -224,11 +224,8 @@ soal_sekarang = st.session_state.database_soal[st.session_state.index_soal]
 if not st.session_state.bank_kata and not st.session_state.jawaban_user:
     st.session_state.bank_kata = [{"id": i, "teks": kata, "dipakai": False} for i, kata in enumerate(soal_sekarang["soal"])]
  
-# --- HITUNG NOMOR TARGET UNTUK TOMBOL BAWAH ---
-idx_sebelumnya = (st.session_state.index_soal - 1) % total_soal
+# --- HITUNG INDEX BERIKUTNYA UNTUK TOMBOL LANJUT ---
 idx_berikutnya = (st.session_state.index_soal + 1) % total_soal
-no_sebelumnya = st.session_state.database_soal[idx_sebelumnya]["id"]
-no_berikutnya = st.session_state.database_soal[idx_berikutnya]["id"]
  
 # --- STYLING CSS ---
 st.markdown("""
@@ -271,7 +268,6 @@ st.markdown("""
         margin-bottom: 10px;
         font-size: 0.9rem;
     }
-    /* Mempercantik deretan nomor agar rapat dan rapi */
     div[data-testid="stPills"] {
         justify-content: center !important;
     }
@@ -365,11 +361,10 @@ render_kuis_lengkap()
  
 st.markdown("<br><hr>", unsafe_allow_html=True)
  
-# --- TOMBOL NAVIGASI UTAMA ---
+# --- TOMBOL NAVIGASI UTAMA (KEMBALI KE RESET, PERIKSA, LANJUT) ---
 col1, col2, col3 = st.columns(3)
 with col1:
-    if st.button(f"⬅️ Soal {no_sebelumnya}", use_container_width=True):
-        st.session_state.index_soal = idx_sebelumnya
+    if st.button("RESET 🔄", use_container_width=True):
         st.session_state.jawaban_user = []
         st.session_state.bank_kata = []
         st.session_state.idx_kata_dipilih = None
@@ -379,7 +374,7 @@ with col2:
     if st.button("PERIKSA ✅", type="primary", use_container_width=True):
         st.session_state.status_periksa = True
 with col3:
-    if st.button(f"Soal {no_berikutnya} ➡️", use_container_width=True):
+    if st.button("LANJUT ➡️", use_container_width=True):
         st.session_state.index_soal = idx_berikutnya
         st.session_state.jawaban_user = []
         st.session_state.bank_kata = []
@@ -387,11 +382,10 @@ with col3:
         st.session_state.status_periksa = False
         st.rerun()
  
-# --- FITUR LOMPAT INSTAN DI PALING BAWAH (DENGAN PILLS ANGKA RAPAT) ---
+# --- FITUR LOMPAT INSTAN DI PALING BAWAH ---
 st.write("") 
 st.markdown("<div style='text-align: center; font-weight: bold; font-size: 0.9rem; color: #555555;'>🎯 Lompat Instan ke Nomor Soal:</div>", unsafe_allow_html=True)
  
-# Membuat list nomor ["1", "2", ..., "21"]
 list_nomor = [str(s["id"]) for s in st.session_state.database_soal]
 nomor_sekarang_str = str(soal_sekarang["id"])
  
@@ -404,7 +398,6 @@ lompat_nomor = st.pills(
     label_visibility="collapsed"
 )
  
-# Jalankan logika pindah halaman jika user memilih angka yang berbeda
 if lompat_nomor and lompat_nomor != nomor_sekarang_str:
     st.session_state.index_soal = list_nomor.index(lompat_nomor)
     st.session_state.jawaban_user = []
