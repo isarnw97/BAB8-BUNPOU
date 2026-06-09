@@ -2,11 +2,10 @@ import streamlit as st
 
 st.set_page_config(page_title="Susun Kata Jepang - Bab 8", layout="centered")
 
-# --- DATABASE SOAL 100% PRESISI SESUAI FORMAT TERBARU ---
+# --- DATABASE SOAL BAB 8 - 100% BERSIH DAN PRESISI ---
 if "database_soal" not in st.session_state:
     st.session_state.database_soal = [
         # --- 1️⃣ 〜はずがない ・ 〜わけがない ---
-     
         {
             "id": 1, 
             "pola": "Pola 1: 〜はずがない ・ 〜わけがない (Tidak mungkin... / Mustahil...)",
@@ -84,7 +83,7 @@ if "database_soal" not in st.session_state:
             "id": 9, 
             "pola": "Pola 2: 〜とは限らない (Belum tentu... / Tidak selalu...)",
             "kanji": "新聞に書いてあることがいつも本当のこと（だ）とは限らない。",
-            "hiragana": "しんぶん に かいて ある こと が いつom ほんとう の こと （だ） と は かぎらない 。",
+            "hiragana": "しんぶん に かいて ある こと が いつも ほんとう の こと （だ） と は かぎらない 。",
             "arti": "Apa yang tertulis di koran tidak selalu/belum tentu benar.",
             "kunci": ["新聞", "に", "書いて", "ある", "こと", "が", "いつも", "本当", "の", "こと", "（だ）", "と", "は", "限らない", "。"],
             "soal": ["新聞", "が", "いつも", "限らない", "本当", "と", "ある", "の", "こと", "に", "は", "書いて", "こと", "（だ）", "。"]
@@ -139,7 +138,7 @@ if "database_soal" not in st.session_state:
         {
             "id": 15, 
             "pola": "Pola 4: 〜ないことはない (Bukan tidak... / Bisa saja asalkan...)",
-            "kanji": "ここから駅まで歩けないことはありませんgが、かなり時間がかかりますよ。",
+            "kanji": "ここから駅まで歩けないことはありませんが、かなり時間がかかりますよ。",
             "hiragana": "ここ から えき まで あるけない こと は ありません が 、 かなり じかん が かかります よ 。",
             "arti": "Bukan tidak bisa berjalan kaki dari sini sampai stasiun, tetapi memakan waktu yang cukup lama, lho.",
             "kunci": ["ここ", "から", "駅", "まで", "歩けない", "こと", "は", "ありません", "が", "かなり", "時間", "が", "かかります", "よ", "。"],
@@ -148,7 +147,7 @@ if "database_soal" not in st.session_state:
         {
             "id": 16, 
             "pola": "Pola 4: 〜ないことはない (Bukan tidak... / Bisa saja asalkan...)",
-            "kanji": "この店のカレーもおいしくないことはないgが、わたしはもっと辛いのが好きだ。",
+            "kanji": "この店のカレーもおいしくないことはないが、わたしはもっと辛いのが好きだ。",
             "hiragana": "この みせ の カレー も おいしくない こと は ない が 、 わたし は もっと からい の が すき だ 。",
             "arti": "Kari di toko ini juga bukan tidak enak, tetapi saya lebih suka yang lebih pedas.",
             "kunci": ["この", "店", "の", "カレー", "も", "おいしくない", "こと", "は", "ない", "が", "わたし", "は", "もっと", "辛い", "の", "が", "好き", "だ", "。"],
@@ -160,8 +159,8 @@ if "database_soal" not in st.session_state:
             "kanji": "試験の結果が心配でないことはないのですが、今は終わってほっとしています。",
             "hiragana": "しけん の けっか が しんぱい で ない こと は ない の です が 、 いま は おわって ほっと して います 。",
             "arti": "Bukan berarti saya tidak khawatir dengan hasil ujiannya, tetapi sekarang saya merasa lega karena sudah selesai.",
-            "kunci": ["試験", "の", "結果", "が", "心配", "で", "ない", "こと", "は", "ない", "のですが", "今", "は", "終わって", "ほっと", "して", "います", "。"],
-            "soal": ["心配", "で", "います", "ない", "試験", "の", "ほっと", "です", "の", "が", "が", "今", "終わって", "して", "は", "のですが", "こと", "結果", "は", "。"]
+            "kunci": ["試験", "の", "結果", "が", "心配", "で", "ない", "こと", "は", "ない", "のである", "今", "は", "終わって", "ほっと", "して", "います", "。"],
+            "soal": ["心配", "で", "います", "ない", "試験", "の", "ほっと", "です", "の", "が", "が", "今", "終わって", "して", "は", "のである", "こと", "結果", "は", "。"]
         },
         # --- 5️⃣ 〜ことは〜が、… ---
         {
@@ -176,7 +175,7 @@ if "database_soal" not in st.session_state:
         {
             "id": 19, 
             "pola": "Pola 5: 〜ことは〜が、… (Memang... sih, tapi...)",
-            "kanji": "わたしは泳げることは泳げますが、長い距離はだめなんです。",
+            "kanji": "わたしは泳げることは泳geますが、長い距離はだめなんです。",
             "hiragana": "わたし は およげる こと は およげます が 、 ながい きょり は だめ な ん です 。",
             "arti": "Saya memang bisa berenang sih, tapi kalau jarak jauh tidak bisa.",
             "kunci": ["わたし", "は", "泳げる", "こと", "は", "泳げます", "が", "長い", "距離", "は", "だめ", "な", "ん", "です", "。"],
