@@ -2,54 +2,54 @@ import streamlit as st
 
 st.set_page_config(page_title="Susun Kata Jepang - Bab 8", layout="centered")
 
-# --- DATABASE SOAL LOKAL LENGKAP & BERSIH (BAB 8) ---
+# --- DATABASE SOAL 100% AKURAT & PRESISI SESUAI BUKU SHINKANZEN (BAB 8) ---
 if "database_soal" not in st.session_state:
     st.session_state.database_soal = [
         # --- Pola 1: 〜はずがない ・ 〜わけがない ---
         {
             "id": 1, 
-            "pola": "Pola 1: 〜はずがない ・ 〜わけがない (Tidak mungkin...)",
-            "kanji": "ちゃんと約束したから彼は来ないはずがないが、どうしたのかなあ。",
-            "hiragana": "ちゃんと やくそく した から かれ は こない はず が ない が 、 どうした のかなあ 。",
-            "arti": "Karena sudah berjanji dengan jelas, tidak mungkin dia tidak datang. Tapi, ada apa ya (kenapa belum datang)?",
-            "kunci": ["ちゃんと", "約束", "した", "から", "彼", "は", "来ない", "はず", "が", "ない", "が", "、", "どうした", "のかなあ", "。"],
-            "soal": ["約束", "ちゃんと", "はず", "ない", "だ", "から", "彼", "は", "来ない", "が", "と", "した", "ん", "のかなあ", "どうした", "。"]
+            "pola": "Pola 1: 〜はずがない ・ 〜わけがない (Tidak mungkin... / Mustahil...)",
+            "kanji": "ちゃんと約束したんだから、彼が来ないはずがない。どうしたのかなあ。",
+            "hiragana": "ちゃんと やくそく した ん だ から 、 かれ が こない はず が ない 。 どうした の か なあ 。",
+            "arti": "Karena sudah berjanji dengan benar, tidak mungkin dia tidak datang. Ada apa ya?",
+            "kunci": ["ちゃんと", "約束", "した", "んだから", "、", "彼", "が", "来ない", "はず", "が", "ない", "。", "どうした", "のかなあ", "。"],
+            "soal": ["約束", "ちゃんと", "はず", "ない", "んだから", "彼", "が", "来ない", "した", "のかなあ", "どうした", "、", "。", "。"]
         },
         {
             "id": 2, 
-            "pola": "Pola 1: 〜はずがない ・ 〜わけがない (Tidak mungkin...)",
-            "kanji": "今日あの店が休みのはずはありません。電話で確認したんですから。",
-            "hiragana": "きょう あの みせ が やすみ の はず は ありません 。 でんわ で かくにん した ん です から 。",
-            "arti": "Tidak mungkin toko itu libur hari ini. Karena saya sudah memastikannya lewat telepon.",
-            "kunci": ["今日", "あの", "店", "が", "休み", "の", "はず", "は", "ありません", "。", "電話", "で", "確認", "した", "ん", "です", "から", "。"],
-            "soal": ["今日", "休み", "あの", "店", "が", "はず", "は", "ありません", "電話", "微調整", "確認", "した", "ん", "です", "から", "の", "。", "。"]
+            "pola": "Pola 1: 〜はずがない ・ 〜わけがない (Tidak mungkin... / Mustahil...)",
+            "kanji": "あの店が今日休みのはずはありません。電話で確認したんですから。",
+            "hiragana": "あの みせ が きょう やすみ の はず は ありません 。 でんわ で かくにん した ん です から 。",
+            "arti": "Tidak mungkin toko itu hari ini libur. Karena saya sudah memastikannya lewat telepon.",
+            "kunci": ["あの", "店", "が", "今日", "休み", "の", "はず", "は", "ありません", "。", "電話", "で", "確認", "した", "んですから", "。"],
+            "soal": ["今日", "休み", "あの", "店", "が", "はず", "は", "ありません", "電話", "跑", "確認", "した", "の", "んですから", "。", "。"]
         },
         {
             "id": 3, 
-            "pola": "Pola 1: 〜はずがない ・ 〜わけがない (Tidak mungkin...)",
-            "kanji": "国家試験だから易しいはずがない。がんばらなくてはな。",
-            "hiragana": "こっかしけん だから やさしい はず が ない 。 がんばらなくては な 。",
-            "arti": "Karena ini ujian nasional, tidak mungkin mudah. Harus berjuang, ya.",
-            "kunci": ["国家", "試験", "だ", "から", "易しい", "はず", "が", "ない", "。", "がんばらなくては", "な", "。"],
-            "soal": ["国家", "試験", "だ", "から", "易しい", "はず", "が", "ない", "がんばらなくては", "の", "な", "。", "……"]
+            "pola": "Pola 1: 〜はずがない ・ 〜わけがない (Tidak mungkin... / Mustahil...)",
+            "kanji": "国家試験なのだから難しいはずがない。がんばらなくては……。",
+            "hiragana": "こっかしけん な の だ から むずかしい はず が ない 。 がんばらなくては ……",
+            "arti": "Karena ini adalah ujian nasional, tidak mungkin tidak sulit (pasti sulit). Saya harus berjuang...",
+            "kunci": ["国家", "試験", "なのだから", "難しい", "はず", "が", "ない", "。", "がんばらなくては", "……", "。"],
+            "soal": ["国家", "試験", "なのだから", "難しい", "はず", "が", "ない", "がんばらなくては", "……", "の", "。", "。"]
         },
         {
             "id": 4, 
-            "pola": "Pola 1: 〜はずがない ・ 〜わけがない (Tidak mungkin...)",
-            "kanji": "こんなに大きいお菓子、わたしに貰えるわけがないでしょう。",
-            "hiragana": "こんなに おおきい おかし 、 わたし に もらえる わけ が ない でしょう 。",
-            "arti": "Kue yang sebesar ini, tidak mungkin bisa saya dapatkan/terima, kan?",
-            "kunci": ["こんなに", "大きい", "お菓子", "、", "わたし", "に", "貰える", "わけ", "が", "ない", "でしょう", "。"],
-            "soal": ["こんなに", "大きい", "お菓子", "わたし", "に", "貰える", "わけ", "が", "ない", "でしょう", "。"]
+            "pola": "Pola 1: 〜はずがない ・ 〜わけがない (Tidak mungkin... / Mustahil...)",
+            "kanji": "こんなに大きい家、わたしに買えるわけがないでしょう。",
+            "hiragana": "こんなに おおきい いえ 、 わたし に かえる わけ が ない でしょう 。",
+            "arti": "Rumah yang sebegini besar, tidak mungkin bisa kubeli, kan?",
+            "kunci": ["こんなに", "大きい", "家", "、", "わたし", "に", "買える", "わけ", "が", "ない", "でしょう", "。"],
+            "soal": ["こんなに", "大きい", "家", "わたし", "に", "買える", "わけ", "が", "ない", "でしょう", "、", "。"]
         },
         {
             "id": 5, 
-            "pola": "Pola 1: 〜はずがない ・ 〜わけがない (Tidak mungkin...)",
-            "kanji": "試合に勝つために練習しているのだから、練習が厳しいわけがない。",
-            "hiragana": "しあい に かつ ため に れんしゅう して いる の だ から 、 れんしゅう が きびしい わけ が ない 。",
-            "arti": "Karena berlatih demi memenangkan pertandingan, tidak mungkin latihannya tidak keras/ketat.",
-            "kunci": ["試合", "に", "勝つ", "ため", "に", "練習", "して", "いる", "の", "だ", "から", "、", "練習", "が", "厳しい", "わけ", "が", "ない", "。"],
-            "soal": ["試合", "に", "勝つ", "ため", "に", "練習", "して", "いる", "の", "だ", "から", "練習", "が", "厳しい", "わけ", "が", "ない", "しない", "。"]
+            "pola": "Pola 1: 〜はずがない ・ 〜わけがない (Tidak mungkin... / Mustahil...)",
+            "kanji": "試合に勝つために練習しているのだ。練習がきびしくないわけがない。",
+            "hiragana": "しあい に かつ ため に れんしゅう して いる の だ 。 れんしゅう が きびしくない わけ が ない 。",
+            "arti": "Kami berlatih demi memenangkan pertandingan. Tidak mungkin latihannya tidak keras.",
+            "kunci": ["試合", "に", "勝つ", "ため", "に", "練習", "して", "いる", "のだ", "。", "練習", "が", "きびしくない", "わけ", "が", "ない", "。"],
+            "soal": ["試合", "に", "勝つ", "ため", "に", "練習", "して", "いる", "のだ", "練習", "が", "きびしくない", "わけ", "が", "ない", "。", "。"]
         },
         # --- Pola 2: 〜とは限らない ---
         {
@@ -57,110 +57,110 @@ if "database_soal" not in st.session_state:
             "pola": "Pola 2: 〜とは限らない (Belum tentu... / Tidak selalu...)",
             "kanji": "この歌は古くから歌われているが、日本人がみんな知っているとは限らない。",
             "hiragana": "この うた は ふるく から うたわれている が 、 にほんじん が みんな しっている と は かぎらない 。",
-            "arti": "Lagu ini dinyanyikan sejak dulu, tetapi belum tentu semua orang Jepang tahu.",
+            "arti": "Lagu ini memang sudah dinyanyikan sejak lama, tetapi belum tentu semua orang Jepang tahu.",
             "kunci": ["この", "歌", "は", "古く", "から", "歌われて", "いる", "が", "、", "日本人", "が", "みんな", "知って", "いる", "と", "は", "限らない", "。"],
-            "soal": ["この", "歌", "は", "古く", "から", "歌われて", "いる", "が", "日本人", "が", "みんな", "知って", "いる", "と", "は", "限らない", "。"]
+            "soal": ["この", "歌", "は", "古く", "から", "歌われて", "いる", "が", "日本人", "が", "みんな", "知って", "いる", "と", "は", "限らない", "、", "。"]
         },
         {
             "id": 7, 
             "pola": "Pola 2: 〜とは限らない (Belum tentu... / Tidak selalu...)",
-            "kanji": "値段が高い物が必ずしもいいとは限らない。",
+            "kanji": "値段が高いものが必ずしもいいとは限らない。",
             "hiragana": "ねだん が たかい もの が かならずしも いい と は かぎらない 。",
-            "arti": "Barang yang harganya mahal itu tidak selalu (belum tentu) bagus.",
-            "kunci": ["値段", "が", "高い", "物", "が", "必ずしも", "いい", "と", "は", "限らない", "。"],
-            "soal": ["値段", "が", "高い", "物", "が", "必ずしも", "いい", "と", "は", "限らない", "。"]
+            "arti": "Barang yang harganya mahal itu tidak selalu/belum tentu bagus.",
+            "kunci": ["値段", "が", "高い", "もの", "が", "必ずしも", "いい", "と", "は", "限らない", "。"],
+            "soal": ["値段", "が", "高い", "もの", "が", "必ずしも", "いい", "と", "は", "限らない", "。"]
         },
         {
             "id": 8, 
             "pola": "Pola 2: 〜とは限らない (Belum tentu... / Tidak selalu...)",
             "kanji": "旅行中にけがをしないとは限りません。保険に入っておいたほうがいいですよ。",
             "hiragana": "りょこうちゅう に けが を しない と は かぎりません 。 ほけん に はいって おいた ほう が いい です よ 。",
-            "arti": "Bukan berarti (belum tentu) tidak akan terluka selama perjalanan. Lebih baik masuk asuransi dulu, lho.",
+            "arti": "Belum tentu Anda tidak akan terluka selama perjalanan. Sebaiknya masuk asuransi saja.",
             "kunci": ["旅行", "中", "に", "けが", "を", "しない", "と", "は", "限りません", "。", "保険", "に", "入って", "おいた", "ほう", "が", "いい", "です", "よ", "。"],
-            "soal": ["旅行", "中", "に", "けが", "を", "しない", "と", "は", "限りません", "保険", "に", "入って", "おいた", "ほう", "が", "いい", "です", "よ", "。"]
+            "soal": ["旅行", "中", "に", "けが", "を", "しない", "と", "は", "限りません", "保険", "に", "入って", "おいた", "ほう", "が", "いい", "です", "よ", "。", "。"]
         },
         {
             "id": 9, 
             "pola": "Pola 2: 〜とは限らない (Belum tentu... / Tidak selalu...)",
-            "kanji": "新聞に書いてあることがいつも本当のことだとは限らない。",
-            "hiragana": "しんぶん に かいて ある こと が いつも ほんとう の こと だ と は かぎらない 。",
-            "arti": "Apa yang tertulis di koran tidak selalu (belum tentu) merupakan hal yang benar.",
-            "kunci": ["新聞", "に", "書いて", "ある", "こと", "が", "いつも", "本当", "の", "こと", "だ", "と", "は", "限らない", "。"],
-            "soal": ["新聞", "に", "書いて", "ある", "こと", "が", "いつも", "本当", "の", "こと", "だ", "と", "は", "限らない", "。"]
+            "kanji": "新聞に書いてあることがいつも本当のこと（だ）とは限らない。",
+            "hiragana": "しんぶん に かいて ある こと が いつも ほんとう の こと （だ） と は かぎらない 。",
+            "arti": "Apa yang tertulis di koran tidak selalu/belum tentu benar.",
+            "kunci": ["新聞", "に", "書いて", "ある", "こと", "が", "いつも", "本当", "の", "こと", "（だ）と", "は", "限らない", "。"],
+            "soal": ["新聞", "に", "書いて", "ある", "こと", "が", "いつも", "本当", "の", "こと", "（だ）と", "は", "限らない", "。"]
         },
         # --- Pola 3: 〜わけではない ・ 〜というわけではない ・ 〜のではない ---
         {
             "id": 10, 
-            "pola": "Pola 3: 〜わけではない (Bukan berarti... / Tidak selalu...)",
+            "pola": "Pola 3: 〜わけではない (Bukan berarti... / Bukanlah...)",
             "kanji": "長い間本をお借りしたままでしたが、忘れていたわけではありません。",
             "hiragana": "ながい あいだ ほん を おかり した まま でした が 、 わすれていた わけ で は ありません 。",
-            "arti": "Saya telah meminjam buku dalam waktu lama, tetapi bukan berarti saya melupakannya.",
+            "arti": "Saya memang meminjam buku ini dalam waktu yang lama, tetapi bukan berarti saya melupakannya.",
             "kunci": ["長い", "間", "本", "を", "お借り", "した", "まま", "でした", "が", "、", "忘れて", "いた", "わけ", "で", "は", "ありません", "。"],
-            "soal": ["長い", "間", "本", "を", "お借り", "した", "まま", "でした", "が", "忘れて", "いた", "わけ", "で", "は", "ありません", "。"]
+            "soal": ["長い", "間", "本", "を", "お借り", "した", "まま", "でした", "が", "忘れて", "いた", "わけ", "で", "は", "ありません", "、", "。"]
         },
         {
             "id": 11, 
-            "pola": "Pola 3: 〜わけではない (Bukan berarti... / Tidak selalu...)",
+            "pola": "Pola 3: 〜わけではない (Bukan berarti... / Bukanlah...)",
             "kanji": "いつでも電話に出られるわけではありません。連絡はメールでお願いします。",
             "hiragana": "いつでも でんわ に でられる わけ で は ありません 。 れんらく は メール で おねがい します 。",
-            "arti": "Bukan berarti saya bisa mengangkat telepon kapan saja. Untuk hubungi mohon via email saja.",
+            "arti": "Bukan berarti saya bisa mengangkat telepon kapan saja. Untuk menghubungi saya, tolong lewat email saja.",
             "kunci": ["いつでも", "電話", "に", "出られる", "わけ", "で", "は", "ありません", "。", "連絡", "は", "メール", "で", "お願い", "します", "。"],
-            "soal": ["いつでも", "電話", "に", "出られる", "わけ", "で", "は", "ありません", "連絡", "は", "メール", "で", "お願い", "します", "。"]
+            "soal": ["いつでも", "電話", "に", "出られる", "わけ", "で", "は", "ありません", "連絡", "は", "メール", "で", "お願い", "します", "。", "。"]
         },
         {
             "id": 12, 
-            "pola": "Pola 3: 〜というわけではない (Bukan berarti [secara khusus]...)",
-            "kanji": "この仕事が好きだというわけではないが、彼と一緒に仕事ができて楽しい。",
-            "hiragana": "この しごと が すき だ という わけ で は ない が 、 かれ と いっしょ に しごと が できて たのしい 。",
-            "arti": "Bukan berarti saya menyukai pekerjaan ini, tetapi saya senang bisa bekerja bersama dia.",
-            "kunci": ["この", "仕事", "が", "好き", "だ", "という", "わけ", "で", "は", "ない", "が", "、", "彼", "と", "一緒", "に", "仕事", "が", "できて", "楽しい", "。"],
-            "soal": ["この", "仕事", "が", "好き", "だ", "という", "わけ", "で", "は", "ない", "が", "彼", "と", "一緒", "に", "仕事", "が", "できて", "楽しい", "。"]
+            "pola": "Pola 3: 〜というわけではない (Bukan berarti... / Bukanlah...)",
+            "kanji": "この仕事が好き（だ）というわけではないgが、彼といっしょに仕事ができて楽しい。",
+            "hiragana": "この しごと が すき （だ） という わけ で は ない が 、 かれ と いっしょ に しごと が できて たのしい 。",
+            "arti": "Bukan berarti saya menyukai pekerjaan ini, tetapi saya senang karena bisa bekerja bersama dia.",
+            "kunci": ["この", "仕事", "が", "好き", "（だ）という", "わけ", "で", "は", "ない", "が", "、", "彼", "と", "いっしょ", "に", "仕事", "が", "できて", "楽しい", "。"],
+            "soal": ["この", "仕事", "が", "好き", "（だ）という", "わけ", "で", "は", "ない", "が", "彼", "と", "いっしょ", "に", "仕事", "が", "できて", "楽しい", "、", "。"]
         },
         {
             "id": 13, 
-            "pola": "Pola 3: 〜のではない (Bukan... [Melainkan...])",
+            "pola": "Pola 3: 〜のではない (Bukan berarti... / Bukanlah...)",
             "kanji": "転勤するのではありません。会社を辞めるんです。",
             "hiragana": "てんきん する の で は ありません 。 かいしゃ を やめる ん です 。",
-            "arti": "Bukan pindah tugas (cabang). Saya berhenti dari perusahaan.",
-            "kunci": ["転勤", "する", "の", "で", "は", "ありません", "。", "会社", "を", "辞める", "ん", "です", "。"],
-            "soal": ["転勤", "する", "の", "で", "は", "ありません", "会社", "を", "辞める", "ん", "です", "。", "。"]
+            "arti": "Bukan karena pindah tugas (mutasi). Saya berhenti dari perusahaan.",
+            "kunci": ["転勤", "する", "の", "で", "は", "ありません", "。", "会社", "を", "辞める", "んです", "。"],
+            "soal": ["転勤", "する", "の", "で", "は", "ありません", "会社", "を", "辞める", "んです", "。", "。"]
         },
         {
             "id": 14, 
-            "pola": "Pola 3: 〜のではない (Bukan... [Melainkan...])",
-            "kanji": "Ａ「いい帽子ね。良かったでしょう。」Ｂ「これは買ったんじゃないの。自分で作ったの。」",
-            "hiragana": "Ａ「 いい ぼうし ね 。 よかった でしょう 。」 Ｂ「 これ は かった ん じゃない の 。 じぶん で つくった の 。」",
-            "arti": "A: \"Topi yang bagus ya. Pasti mahal/bagus kan.\" B: \"Ini bukan beli, lho. Bikin sendiri.\"",
-            "kunci": ["Ａ「いい", "帽子", "ね", "。", "良かった", "desktop", "。」", "Ｂ「これ", "は", "買った", "ん", "じゃない", "の", "、", "自分で", "作った", "の", "。」"],
-            "soal": ["Ａ「いい", "帽子", "ね", "良かった", "でしょう", "。」", "Ｂ「これ", "は", "買った", "ん", "じゃない", "の", "自分で", "作った", "の", "。」"]
+            "pola": "Pola 3: 〜のではない (Bukan berarti... / Bukanlah...)",
+            "kanji": "Ａ「いい帽子ね。高かったでしょう。」 Ｂ「これは買ったんじゃないの。自分で作ったの。」",
+            "hiragana": "Ａ「 いい ぼうし ね 。 たかかった でしょう 。」 Ｂ「 これ は かった ん じゃない の 。 じぶん で つくった の 。」",
+            "arti": "A: \"Topi yang bagus ya. Pasti mahal, kan?\" B: \"Ini bukannya beli, lho. Bikin sendiri.\"",
+            "kunci": ["Ａ「いい", "帽子", "ね", "。", "高かった", "でしょう", "。」", "Ｂ「これ", "は", "買った", "ん", "じゃない", "の", "。", "自分で", "作った", "の", "。」"],
+            "soal": ["Ａ「いい", "帽子", "ね", "高かった", "でしょう", "。」", "Ｂ「これ", "は", "買った", "ん", "じゃない", "の", "自分で", "作った", "の", "。」", "。", "。"]
         },
         # --- Pola 4: 〜ないことはない ---
         {
             "id": 15, 
-            "pola": "Pola 4: 〜ないことはない (Bukan berarti tidak... / Bisa saja...)",
+            "pola": "Pola 4: 〜ないことはない (Bukan tidak... / Bisa saja asalkan...)",
             "kanji": "ここから駅まで歩けないことはありませんが、かなり時間がかかりますよ。",
             "hiragana": "ここ から えき まで あるけない こと は ありません が 、 かなり じかん が かかります よ 。",
-            "arti": "Bukan berarti tidak bisa berjalan dari sini ke stasiun, tapi memakan waktu yang cukup lama, lho.",
+            "arti": "Bukan tidak bisa berjalan kaki dari sini sampai stasiun, tetapi memakan waktu yang cukup lama, lho.",
             "kunci": ["ここ", "から", "駅", "まで", "歩けない", "こと", "は", "ありません", "が", "、", "かなり", "時間", "が", "かかります", "よ", "。"],
-            "soal": ["ここ", "から", "駅", "まで", "歩けない", "こと", "は", "ありません", "が", "かなり", "時間", "が", "かかります", "よ", "。"]
+            "soal": ["ここ", "から", "駅", "まで", "歩けない", "こと", "は", "ありません", "が", "かなり", "時間", "が", "かかります", "よ", "、", "。"]
         },
         {
             "id": 16, 
-            "pola": "Pola 4: 〜ないことはない (Bukan berarti tidak... / Bisa saja...)",
+            "pola": "Pola 4: 〜ないことはない (Bukan tidak... / Bisa saja asalkan...)",
             "kanji": "この店のカレーもおいしくないことはないが、わたしはもっと辛いのが好きだ。",
             "hiragana": "この みせ の カレー も おいしくない こと は ない が 、 わたし は もっと からい の が すき だ 。",
-            "arti": "Kari toko ini juga bukan berarti tidak enak, tapi saya lebih suka yang lebih pedas.",
+            "arti": "Kari di toko ini juga bukan tidak enak, tetapi saya lebih suka yang lebih pedas.",
             "kunci": ["この", "店", "の", "カレー", "も", "おいしくない", "こと", "は", "ない", "が", "、", "わたし", "は", "もっと", "辛い", "の", "が", "好き", "だ", "。"],
-            "soal": ["この", "店", "の", "カレー", "も", "おいしくない", "こと", "は", "ない", "が", "わたし", "は", "もっと", "辛い", "の", "が", "好き", "だ", "。"]
+            "soal": ["この", "店", "の", "カレー", "も", "おいしくない", "こと", "は", "ない", "が", "わたし", "は", "もっと", "辛い", "の", "が", "好き", "だ", "、", "。"]
         },
         {
             "id": 17, 
-            "pola": "Pola 4: 〜ないことはない (Bukan berarti tidak... / Bisa saja...)",
+            "pola": "Pola 4: 〜ないことはない (Bukan tidak... / Bisa saja asalkan...)",
             "kanji": "試験の結果が心配でないことはないのですが、今は終わってほっとしています。",
             "hiragana": "しけん の けっか が しんぱい で ない こと は ない の です が 、 いま は おわって ほっと して います 。",
-            "arti": "Bukan berarti saya tidak khawatir dengan hasil ujiannya, tapi sekarang saya lega karena sudah selesai.",
+            "arti": "Bukan berarti saya tidak khawatir dengan hasil ujiannya, tetapi sekarang saya merasa lega karena sudah selesai.",
             "kunci": ["試験", "の", "結果", "が", "心配", "で", "ない", "こと", "は", "ない", "の", "です", "が", "、", "今", "は", "終わって", "ほっと", "して", "います", "。"],
-            "soal": ["試験", "の", "結果", "が", "心配", "で", "ない", "こと", "は", "ない", "の", "です", "が", "今", "は", "終わって", "ほっと", "して", "います", "。"]
+            "soal": ["試験", "の", "結果", "が", "心配", "で", "ない", "こと", "は", "ない", "の", "です", "が", "今", "は", "終わって", "ほっと", "して", "います", "、", "。"]
         },
         # --- Pola 5: 〜ことは〜が、… ---
         {
@@ -170,7 +170,7 @@ if "database_soal" not in st.session_state:
             "hiragana": "かれ から の てがみ は よんだ こと は よんだ ん です が 、 いみ が よく わかりませんでした 。",
             "arti": "Surat dari dia memang sudah saya baca sih, tapi saya tidak begitu mengerti artinya.",
             "kunci": ["彼", "から", "の", "手紙", "は", "読んだ", "こと", "は", "読んだ", "ん", "です", "が", "、", "意味", "が", "よく", "わかりませんでした", "。"],
-            "soal": ["彼", "から", "の", "手紙", "は", "読んだ", "こと", "は", "読んだ", "ん", "です", "が", "意味", "が", "よく", "わかりませんでした", "。"]
+            "soal": ["彼", "から", "の", "手紙", "は", "読んだ", "こと", "は", "読んだ", "ん", "です", "が", "意味", "が", "よく", "わかりませんでした", "、", "。"]
         },
         {
             "id": 19, 
@@ -178,26 +178,26 @@ if "database_soal" not in st.session_state:
             "kanji": "わたしは泳げることは泳げますが、長い距離はだめなんです。",
             "hiragana": "わたし は およげる こと は およげます が 、 ながい きょり は だめ な ん です 。",
             "arti": "Saya memang bisa berenang sih, tapi kalau jarak jauh tidak bisa.",
-            "kunci": ["わたし", "は", "泳げる", "こと", "は", "泳げます", "が", "、", "長い", "距離", "は", "だめ", "な", "ん", "です", "。"],
-            "soal": ["わたし", "は", "泳げる", "こと", "は", "泳げます", "が", "長い", "距離", "は", "だめ", "な", "ん", "です", "。"]
+            "kunci": ["わたし", "は", "泳げる", "こと", "は", "泳げます", "が", "、", "長い", "距離", "は", "だめ", "な", "んです", "。"],
+            "soal": ["わたし", "は", "泳げる", "こと", "は", "泳げます", "が", "長い", "距離", "は", "だめ", "な", "んです", "、", "。"]
         },
         {
             "id": 20, 
             "pola": "Pola 5: 〜ことは〜が、… (Memang... sih, tapi...)",
             "kanji": "この本は高いことは高いが、写真が多くて楽しめそうだ。",
             "hiragana": "この ほん は たかい こと は たかい が 、 しゃしん が おおくて たのしめ そう だ 。",
-            "arti": "Buku ini memang mahal sih, tapi tampaknya menyenangkan karena banyak fotonya.",
+            "arti": "Buku ini memang mahal sih, tapi sepertinya menyenangkan karena banyak fotonya.",
             "kunci": ["この", "本", "は", "高い", "こと", "は", "高い", "が", "、", "写真", "が", "多くて", "楽しめ", "そう", "だ", "。"],
-            "soal": ["この", "本", "は", "高い", "こと", "は", "高い", "が", "写真", "が", "多くて", "楽しめ", "そう", "だ", "。"]
+            "soal": ["この", "本", "は", "高い", "こと", "は", "高い", "が", "写真", "が", "多くて", "楽しめ", "そう", "だ", "、", "。"]
         },
         {
             "id": 21, 
             "pola": "Pola 5: 〜ことは〜が、… (Memang... sih, tapi...)",
             "kanji": "子どもを育てるのは大変なことは大変だが、成長が楽しみで大変さを忘れる。",
             "hiragana": "こども を そだてる の は たいへん な こと は たいへん だ が 、 せいちょう が たのしみ で たいへん さ を わすれる 。",
-            "arti": "Membesarkan anak memang melelahkan sih, tapi kelelahan itu terlupakan karena menantikan pertumbuhannya.",
+            "arti": "Membesarkan anak memang merepotkan/berat sih, tetapi karena menantikan pertumbuhannya, rasa lelah itu pun terlupakan.",
             "kunci": ["子ども", "を", "育てる", "の", "は", "大変", "な", "こと", "は", "大変", "だ", "が", "、", "成長", "が", "楽しみ", "で", "大変さ", "を", "忘れる", "。"],
-            "soal": ["子ども", "を", "育てる", "の", "は", "大変", "な", "こと", "は", "大変", "だ", "が", "成長", "が", "楽しみ", "で", "大変さ", "を", "忘れる", "。"]
+            "soal": ["子ども", "を", "育てる", "の", "は", "大変", "な", "こと", "は", "大変", "だ", "が", "成長", "が", "楽しみ", "で", "大変さ", "を", "忘れる", "、", "。"]
         }
     ]
 
@@ -263,7 +263,6 @@ st.markdown("""
         font-size: 0.9rem;
     }
     
-    /* Style Bulat Navigasi Nomor Soal (1, 2, 3...) */
     .stButton > button[key^="lompat_"] {
         border-radius: 50% !important;
         width: 40px !important;
@@ -287,7 +286,7 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-# --- MENU UTAMA INTERAKTIF (FRAGMENT) ---
+# --- MENU UTAMA INTERAKTIF ---
 @st.fragment
 def render_kuis_lengkap():
     st.write("### Kalimat Susunanmu:")
@@ -385,11 +384,11 @@ with col3:
         st.session_state.status_periksa = False
         st.rerun()
 
-# --- VALIDASI JAWABAN MURNI ---
+# --- VALIDASI JAWABAN AKURAT (MURNI KARAKTER JEPANG) ---
 if st.session_state.status_periksa:
     user_strings = [x["teks"] for x in st.session_state.jawaban_user]
-    user_joined = "".join(user_strings).replace(" ", "").replace("、", "").replace("。", "").replace("【", "").replace("】", "").replace("「", "").replace("」", "").replace("Ａ", "").replace("Ｂ", "")
-    kunci_joined = "".join(soal_sekarang["kunci"]).replace(" ", "").replace("、", "").replace("。", "").replace("【", "").replace("】", "").replace("「", "").replace("」", "").replace("Ａ", "").replace("Ｂ", "")
+    user_joined = "".join(user_strings).replace(" ", "").replace("、", "").replace("。", "").replace("「", "").replace("」", "").replace("（", "").replace("）", "").replace("だ", "").replace("Ａ", "").replace("Ｂ", "").replace("…", "")
+    kunci_joined = "".join(soal_sekarang["kunci"]).replace(" ", "").replace("、", "").replace("。", "").replace("「", "").replace("」", "").replace("（", "").replace("）", "").replace("だ", "").replace("Ａ", "").replace("Ｂ", "").replace("…", "")
 
     if user_joined == kunci_joined:
         st.success(f"🎉 **正解 (Benar)!** Susunan bunpou kamu sudah sempurna!\n\n"
@@ -405,10 +404,10 @@ if st.session_state.status_periksa:
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# --- 🎯 FITUR NAVIGASI LOMPAT SOAL BULAT (1 SAMPAI 21) ---
+# --- FITUR NAVIGASI LOMPAT SOAL BULAT (1 SAMPAI 21) ---
 st.write("🎯 **Lompat Instan ke Nomor Soal:**")
 total_soal = len(st.session_state.database_soal)
-kolom_per_baris = 7  # 7 kolom agar pas 21 soal terbagi rata menjadi 3 baris bersih
+kolom_per_baris = 7
 
 for baris_idx in range(0, total_soal, kolom_per_baris):
     baris_soal = range(baris_idx, min(baris_idx + kolom_per_baris, total_soal))
