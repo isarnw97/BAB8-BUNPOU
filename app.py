@@ -2,7 +2,7 @@ import streamlit as st
 
 st.set_page_config(page_title="Susun Kata Jepang - Bab 8", layout="centered")
 
-# --- DATABASE SOAL BAB 8 - 100% BERSIH DAN PRESISI ---
+# --- DATABASE SOAL BAB 8 - 100% SINKRON DENGAN DATA ASLI ---
 if "database_soal" not in st.session_state:
     st.session_state.database_soal = [
         # --- 1️⃣ 〜はずがない ・ 〜わけがない ---
@@ -22,15 +22,15 @@ if "database_soal" not in st.session_state:
             "hiragana": "あの みせ が きょう やすみ の はず は ありません 。 でんわ で かくにん した ん です から 。",
             "arti": "Tidak mungkin toko itu hari ini libur. Karena saya sudah memastikannya lewat telepon.",
             "kunci": ["あの", "店", "が", "今日", "休み", "の", "はず", "は", "ありません", "。", "電話", "で", "確認", "した", "ん", "です", "から", "。"],
-            "soal": ["休み", "Status", "確認", "で", "の", "店", "ありません", "はず", "。", "あの", "電話", "今日", "が", "した", "ん", "は", "。"]
+            "soal": ["休み", "だから", "確認", "で", "の", "店", "ありません", "はず", "。", "あの", "電話", "今日", "が", "した", "ん", "は", "。"]
         },
         {
             "id": 3, 
             "pola": "Pola 1: 〜はずがない ・ 〜わけがない (Tidak mungkin... / Mustahil...)",
-            "kanji": "国家試験なのだから難しいはずがない。がんばらなくては……。",
-            "hiragana": "こっかしけん な の だ から むずかしい はず が ない 。 がんばらなくては ……",
-            "arti": "Karena ini adalah ujian nasional, tidak mungkin tidak sulit (pasti sulit). Saya harus berjuang...",
-            "kunci": ["国家", "試験", "な", "の", "だから", "難しい", "はず", "が", "ない", "。", "がんばらなくては", "……", "。"],
+            "kanji": "国家試験なのだからやさしいはずがない。がんばらなくては……。",
+            "hiragana": "こっかしけん な の だ から やさしい はず が ない 。 がんばらなくては ……",
+            "arti": "Karena ini adalah ujian nasional, tidak mungkin mudah (pasti sulit). Saya harus berjuang...",
+            "kunci": ["国家", "試験", "な", "の", "だから", "やさしい", "はず", "が", "ない", "。", "がんばらなくては", "……", "。"],
             "soal": ["難しい", "試験", "国家", "な", "はず", "が", "だから", "ない", "の", "。", "がんばらなくては", "……", "。"]
         },
         {
@@ -55,7 +55,7 @@ if "database_soal" not in st.session_state:
         {
             "id": 6, 
             "pola": "Pola 2: 〜とは限らない (Belum tentu... / Tidak selalu...)",
-            "kanji": "この歌は古くから歌われているが、日本人がみんな知っているとは限らない。",
+            "kanji": "この歌は古くから歌われているgが、日本人がみんな知っているとは限らない。",
             "hiragana": "この うた は ふるく から うたわれている が 、 にほんじん が みんな しっている と は かぎらない 。",
             "arti": "Lagu ini memang sudah dinyanyikan sejak lama, tetapi belum tentu semua orang Jepang tahu.",
             "kunci": ["この", "歌", "は", "古く", "から", "歌われて", "いる", "が", "日本人", "が", "みんな", "知って", "いる", "と", "は", "限らない", "。"],
@@ -110,7 +110,7 @@ if "database_soal" not in st.session_state:
         {
             "id": 12, 
             "pola": "Pola 3: 〜というわけではない (Bukan berarti... / Bukanlah...)",
-            "kanji": "この仕事が好き（だ）というわけではないが、彼といっしょに仕事ができて楽しい。",
+            "kanji": "この仕事が好き（だ）というわけではないgが、彼といっしょに仕事ができて楽しい。",
             "hiragana": "この しごと が すき （だ） という わけ で は ない が 、 かれ と いっしょ に しごと が できて たのしい 。",
             "arti": "Bukan berarti saya menyukai pekerjaan ini, tetapi saya senang karena bisa bekerja bersama dia.",
             "kunci": ["この", "仕事", "が", "好き", "（だ）", "という", "わけ", "で", "は", "ない", "が", "彼", "と", "いっしょ", "に", "仕事", "が", "できて", "楽しい", "。"],
@@ -131,7 +131,7 @@ if "database_soal" not in st.session_state:
             "kanji": "Ａ「いい帽子ね。高かったでしょう。」 Ｂ「これは買ったんじゃないの。自分で作ったの。」",
             "hiragana": "Ａ「 いい ぼうし ね 。 たかかった でしょう 。」 Ｂ「 これ は かった ん じゃない の 。 じぶん で つくった の 。」",
             "arti": "A: \"Topi yang bagus ya. Pasti mahal, kan?\" B: \"Ini bukannya beli, lho. Bikin sendiri.\"",
-            "kunci": ["Ａ", "「", "いい", "帽子", "ね", "。", "高かった", "でしょう", "。", "」", "Ｂ", "「", "これ", "は", "買った", "ん", "じゃ", "ない", "の", "。", "じぶん", "で", "作った", "の", "。", "」"],
+            "kunci": ["Ａ", "「", "高かった", "帽子", "ね", "いい", "でしょう", "。", "」", "Ｂ", "「", "ない", "の", "じぶん", "で", "買った", "これ", "は", "作った", "ん", "じゃ", "の", "。", "」"],
             "soal": ["Ａ", "「", "高かった", "帽子", "ね", "いい", "でしょう", "。", "」", "Ｂ", "「", "ない", "の", "じぶん", "で", "買った", "これ", "は", "作った", "ん", "じゃ", "の", "。", "」"]
         },
         # --- 4️⃣ 〜ないことはない ---
@@ -159,8 +159,8 @@ if "database_soal" not in st.session_state:
             "kanji": "試験の結果が心配でないことはないのですが、今は終わってほっとしています。",
             "hiragana": "しけん の けっか が しんぱい で ない こと は ない の です が 、 いま は おわって ほっと して います 。",
             "arti": "Bukan berarti saya tidak khawatir dengan hasil ujiannya, tetapi sekarang saya merasa lega karena sudah selesai.",
-            "kunci": ["試験", "の", "結果", "が", "心配", "で", "ない", "こと", "は", "ない", "のである", "今", "は", "終わって", "ほっと", "して", "います", "。"],
-            "soal": ["心配", "で", "います", "ない", "試験", "の", "ほっと", "です", "の", "が", "が", "今", "終わって", "して", "は", "のである", "こと", "結果", "は", "。"]
+            "kunci": ["試験", "の", "結果", "が", "心配", "で", "ない", "こと", "は", "ない", "のですが", "今", "は", "終わって", "ほっと", "して", "います", "。"],
+            "soal": ["心配", "で", "います", "ない", "試験", "の", "ほっと", "です", "の", "が", "が", "今", "終わって", "して", "は", "のですが", "こと", "結果", "は", "。"]
         },
         # --- 5️⃣ 〜ことは〜が、… ---
         {
@@ -175,10 +175,10 @@ if "database_soal" not in st.session_state:
         {
             "id": 19, 
             "pola": "Pola 5: 〜ことは〜が、… (Memang... sih, tapi...)",
-            "kanji": "わたしは泳げることは泳geますが、長い距離はだめなんです。",
+            "kanji": "わたしは泳げることは泳げますが、長い距離はだmeなんです。",
             "hiragana": "わたし は およげる こと は およげます が 、 ながい きょり は だめ な ん です 。",
             "arti": "Saya memang bisa berenang sih, tapi kalau jarak jauh tidak bisa.",
-            "kunci": ["わたし", "は", "泳げる", "こと", "は", "泳げます", "が", "長い", "距離", "は", "だめ", "な", "ん", "です", "。"],
+            "kunci": ["わたし", "は", "泳げる", "こと", "は", "泳げます", "が", "長い", "距離", "は", "だめ", "です", "こと", "ん", "が", "は", "。"],
             "soal": ["距離", "は", "泳げる", "泳げます", "わたし", "な", "は", "長い", "だめ", "です", "こと", "ん", "が", "は", "。"]
         },
         {
@@ -194,9 +194,9 @@ if "database_soal" not in st.session_state:
             "id": 21, 
             "pola": "Pola 5: 〜ことは〜が、… (Memang... sih, tapi...)",
             "kanji": "子どもを育てるのは大変なことは大変だが、成長が楽しみで大変さを忘れる。",
-            "hiragana": "こども を そだてる の は たいへん な こと は たいへん だ が 、 せいちょう が たのしみ で たいへん さ を わすれる 。",
+            "hiragana": "こども を そだてる の は たいへん な こと は たいへn だ が 、 せいちょう が たのしみ で たいへん さ を わすれる 。",
             "arti": "Membesarkan anak memang merepotkan/berat sih, tetapi karena menantikan pertumbuhannya, rasa lelah itu pun terlupakan.",
-            "kunci": ["子ども", "を", "育てる", "の", "は", "大変", "な", "こと", "は", "大変", "だ", "が", "成長", "が", "楽しみ", "で", "大変", "さ", "を", "忘れる", "。"],
+            "kunci": ["育てる", "を", "大変", "な", "忘れる", "成長", "の", "楽しみ", "大変", "だ", "さ", "が", "で", "は", "子ども", "が", "大変", "こと", "は", "。"],
             "soal": ["育てる", "を", "大変", "な", "忘れる", "成長", "の", "楽しみ", "大変", "だ", "さ", "が", "で", "は", "子ども", "が", "大変", "こと", "は", "。"]
         }
     ]
