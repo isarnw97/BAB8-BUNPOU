@@ -6,6 +6,7 @@ st.set_page_config(page_title="Susun Kata Jepang - Bab 8", layout="centered")
 if "database_soal" not in st.session_state:
     st.session_state.database_soal = [
         # --- 1️⃣ 〜はずがない ・ 〜わけがない ---
+     
         {
             "id": 1, 
             "pola": "Pola 1: 〜はずがない ・ 〜わけがない (Tidak mungkin... / Mustahil...)",
@@ -13,7 +14,7 @@ if "database_soal" not in st.session_state:
             "hiragana": "ちゃんと やくそく した ん だ から 、 かれ が こない はず が ない 。 どうした の か なあ 。",
             "arti": "Karena sudah berjanji dengan benar, tidak mungkin dia tidak datang. Ada apa ya?",
             "kunci": ["ちゃんと", "約束", "した", "んだ", "から", "彼", "が", "来ない", "はず", "が", "ない", "。", "どう", "した", "のかなあ", "。"],
-            "soal": ["ない", "の", "彼", "から", "んだ", "どう", "はず", "ちゃんと", "約束", "来ない", "が", "した", "が", "。", "した", "かな아", "。"]
+            "soal": ["ない", "の", "彼", "から", "んだ", "どう", "はず", "ちゃんと", "約束", "来ない", "が", "した", "が", "。", "した", "かなあ", "。"]
         },
         {
             "id": 2, 
